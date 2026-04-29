@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -10,30 +11,37 @@ import {
   Build as BuildIcon,
   CheckCircle as CheckCircleIcon,
   WhatsApp as WhatsAppIcon,
+  Menu as MenuIcon,
+  Close as CloseIcon,
 } from "@mui/icons-material";
 
 export default function Home() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col font-sans relative">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b border-gray-200">
+      <header className="bg-white shadow-sm border-b border-gray-200 relative z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            {/* Logo */}
+            {/* Logo and Name */}
             <div className="flex-shrink-0 flex items-center">
-              <Link href="/">
+              <Link href="/" className="flex items-center">
                 <Image
                   src="/logo.png"
                   alt="KV Mobile Logo"
-                  width={180}
-                  height={60}
-                  className="h-14 w-auto object-contain"
+                  width={150}
+                  height={50}
+                  className="h-10 sm:h-14 w-auto object-contain"
                   unoptimized
                 />
+                <span className="ml-2 font-bold text-xl text-gray-900 tracking-tight md:hidden">
+                  KV Technology
+                </span>
               </Link>
             </div>
 
-            {/* Navigation */}
+            {/* Desktop Navigation */}
             <nav className="hidden md:ml-6 md:flex md:space-x-8">
               <Link href="#" className="text-gray-900 border-b-2 border-blue-600 px-1 pt-1 text-sm font-medium">Home</Link>
               <Link href="#services" className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 border-b-2 px-1 pt-1 text-sm font-medium">Repair Services</Link>
@@ -47,8 +55,74 @@ export default function Home() {
                 Call Now
               </a>
             </div>
+
+            {/* Mobile Buttons (Call + Menu) */}
+            <div className="flex items-center space-x-2 md:hidden">
+              <a href="tel:0778525115" className="inline-flex items-center justify-center p-2 rounded-md text-blue-600 bg-blue-50 border border-blue-100 hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
+                <span className="sr-only">Call Now</span>
+                <PhoneIcon className="h-5 w-5" aria-hidden="true" />
+              </a>
+              <button
+                type="button"
+                className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+                aria-expanded="false"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
+                <span className="sr-only">Open main menu</span>
+                {mobileMenuOpen ? (
+                  <CloseIcon className="block h-6 w-6" aria-hidden="true" />
+                ) : (
+                  <MenuIcon className="block h-6 w-6" aria-hidden="true" />
+                )}
+              </button>
+            </div>
           </div>
         </div>
+
+        {/* Mobile Navigation Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden absolute top-20 left-0 w-full bg-white shadow-lg border-b border-gray-200">
+            <div className="pt-2 pb-3 space-y-1">
+              <Link 
+                href="#" 
+                className="bg-blue-50 border-blue-500 text-blue-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Home
+              </Link>
+              <Link 
+                href="#services" 
+                className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Repair Services
+              </Link>
+              <Link 
+                href="#" 
+                className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Accessories
+              </Link>
+              <Link 
+                href="#contact" 
+                className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Contact Us
+              </Link>
+            </div>
+            <div className="pt-4 pb-4 border-t border-gray-200 flex justify-center">
+              <a 
+                href="tel:0778525115" 
+                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
+              >
+                <PhoneIcon className="mr-2 -ml-1 h-5 w-5" />
+                Call Now
+              </a>
+            </div>
+          </div>
+        )}
       </header>
 
       <main className="flex-grow">
@@ -232,7 +306,7 @@ export default function Home() {
           </div>
         </div>
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} KV Mobile. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} KV Technology. All rights reserved.</p>
         </div>
       </footer>
 
