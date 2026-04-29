@@ -13,6 +13,8 @@ import {
   WhatsApp as WhatsAppIcon,
   Menu as MenuIcon,
   Close as CloseIcon,
+  LocationOn as LocationOnIcon,
+  Email as EmailIcon,
 } from "@mui/icons-material";
 
 export default function Home() {
@@ -43,9 +45,9 @@ export default function Home() {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:ml-6 md:flex md:space-x-8">
-              <Link href="#" className="text-gray-900 border-b-2 border-blue-600 px-1 pt-1 text-sm font-medium">Home</Link>
+              <Link href="#" className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 border-b-2 px-1 pt-1 text-sm font-medium">Home</Link>
               <Link href="#services" className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 border-b-2 px-1 pt-1 text-sm font-medium">Repair Services</Link>
-              <Link href="#" className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 border-b-2 px-1 pt-1 text-sm font-medium">Accessories</Link>
+              <Link href="#accessories" className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 border-b-2 px-1 pt-1 text-sm font-medium">Accessories</Link>
               <Link href="#contact" className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 border-b-2 px-1 pt-1 text-sm font-medium">Contact Us</Link>
             </nav>
 
@@ -98,7 +100,7 @@ export default function Home() {
                 Repair Services
               </Link>
               <Link 
-                href="#" 
+                href="#accessories" 
                 className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
                 onClick={() => setMobileMenuOpen(false)}
               >
@@ -255,6 +257,88 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        {/* Accessories Section */}
+        <div id="accessories" className="bg-gray-100 py-16 px-4 sm:py-24 sm:px-6 lg:px-8 border-t border-gray-200">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center">
+              <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Premium Accessories</h2>
+              <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
+                Discover our wide range of high-quality mobile accessories to protect and power your devices.
+              </p>
+            </div>
+
+            <div className="mt-12 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+              {/* Chargers */}
+              <div className="group relative bg-white rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-100">
+                <div className="relative h-56 w-full overflow-hidden">
+                  <Image 
+                    src="/charger.jpg" 
+                    alt="Mobile Chargers" 
+                    fill 
+                    className="object-cover group-hover:scale-110 transition-transform duration-500" 
+                    unoptimized
+                  />
+                </div>
+                <div className="p-5">
+                  <h3 className="text-lg font-bold text-gray-900 mb-1">Fast Chargers</h3>
+                  <p className="text-sm text-gray-600">Original and certified fast charging adapters for all device brands.</p>
+                </div>
+              </div>
+
+              {/* Cables */}
+              <div className="group relative bg-white rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-100">
+                <div className="relative h-56 w-full overflow-hidden">
+                  <Image 
+                    src="/cable.jpg" 
+                    alt="USB Cables" 
+                    fill 
+                    className="object-cover group-hover:scale-110 transition-transform duration-500" 
+                    unoptimized
+                  />
+                </div>
+                <div className="p-5">
+                  <h3 className="text-lg font-bold text-gray-900 mb-1">Premium Cables</h3>
+                  <p className="text-sm text-gray-600">Durable Type-C, Lightning, and Micro USB cables for data &amp; power.</p>
+                </div>
+              </div>
+
+              {/* Tempered Glass */}
+              <div className="group relative bg-white rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-100">
+                <div className="relative h-56 w-full overflow-hidden bg-gray-200">
+                  <Image 
+                    src="/temperd.jpg" 
+                    alt="Tempered Glass" 
+                    fill 
+                    className="object-cover group-hover:scale-110 transition-transform duration-500" 
+                    unoptimized
+                  />
+                </div>
+                <div className="p-5">
+                  <h3 className="text-lg font-bold text-gray-900 mb-1">Tempered Glass</h3>
+                  <p className="text-sm text-gray-600">High-quality 9H screen protectors to keep your display completely flawless.</p>
+                </div>
+              </div>
+
+              {/* Back Covers */}
+              <div className="group relative bg-white rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-100">
+                <div className="relative h-56 w-full overflow-hidden">
+                  <Image 
+                    src="/backcover.jpg" 
+                    alt="Phone Back Covers" 
+                    fill 
+                    className="object-cover group-hover:scale-110 transition-transform duration-500" 
+                    unoptimized
+                  />
+                </div>
+                <div className="p-5">
+                  <h3 className="text-lg font-bold text-gray-900 mb-1">Back Covers</h3>
+                  <p className="text-sm text-gray-600">Stylish, rugged, and clear cases for maximum drop &amp; scratch protection.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
 
       {/* Footer */}
@@ -287,19 +371,19 @@ export default function Home() {
             <h4 className="text-lg font-semibold mb-4 text-gray-200">Contact Us</h4>
             <ul className="space-y-3 text-gray-400">
               <li className="flex items-start">
-                <span className="mr-2">??</span> 
+                <LocationOnIcon className="mr-2 h-5 w-5 text-gray-400" />
                 <span>Pallegama, Gnathuna, Kegalle</span>
               </li>
               <li className="flex items-start">
-                <span className="mr-2">??</span> 
+                <PhoneIcon className="mr-2 h-5 w-5 text-gray-400" />
                 <span>0778525115 / 0741718855</span>
               </li>
               <li className="flex items-start">
-                <span className="mr-2">??</span> 
+                <EmailIcon className="mr-2 h-5 w-5 text-gray-400" />
                 <a href="mailto:nimeshkavindakarunasinghe@gmail.com" className="hover:text-white break-all">nimeshkavindakarunasinghe@gmail.com</a>
               </li>
               <li className="flex items-start">
-                <span className="mr-2">??</span> 
+                <AccessTimeIcon className="mr-2 h-5 w-5 text-gray-400" />
                 <span>Open: 24/7</span>
               </li>
             </ul>
