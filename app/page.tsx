@@ -9,11 +9,12 @@ import {
   AccessTime as AccessTimeIcon,
   Build as BuildIcon,
   CheckCircle as CheckCircleIcon,
+  WhatsApp as WhatsAppIcon,
 } from "@mui/icons-material";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col font-sans">
+    <div className="min-h-screen bg-gray-50 flex flex-col font-sans relative">
       {/* Header */}
       <header className="bg-white shadow-sm border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,15 +36,15 @@ export default function Home() {
             {/* Navigation */}
             <nav className="hidden md:ml-6 md:flex md:space-x-8">
               <Link href="#" className="text-gray-900 border-b-2 border-blue-600 px-1 pt-1 text-sm font-medium">Home</Link>
-              <Link href="#" className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 border-b-2 px-1 pt-1 text-sm font-medium">Repair Services</Link>
+              <Link href="#services" className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 border-b-2 px-1 pt-1 text-sm font-medium">Repair Services</Link>
               <Link href="#" className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 border-b-2 px-1 pt-1 text-sm font-medium">Accessories</Link>
-              <Link href="#" className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 border-b-2 px-1 pt-1 text-sm font-medium">Contact Us</Link>
+              <Link href="#contact" className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 border-b-2 px-1 pt-1 text-sm font-medium">Contact Us</Link>
             </nav>
 
             <div className="hidden md:flex items-center">
-              <a href="tel:+1234567890" className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+              <a href="tel:0778525115" className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                 <PhoneIcon className="mr-2 -ml-1 h-5 w-5" />
-                Call Now
+                0778525115
               </a>
             </div>
           </div>
@@ -76,8 +77,8 @@ export default function Home() {
               <a href="#services" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50 shadow-sm">
                 View Services
               </a>
-              <a href="#" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 shadow-sm">
-                Get a Quote
+              <a href="tel:0778525115" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 shadow-sm">
+                Call Us Now
               </a>
             </div>
           </div>
@@ -123,38 +124,59 @@ export default function Home() {
 
           <div className="mt-12 grid gap-8 grid-cols-1 md:grid-cols-3">
             {/* Mobile Phones */}
-            <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 border border-gray-100">
-              <div className="h-48 bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-white">
-                <PhoneIcon style={{ fontSize: 80 }} />
+            <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 border border-gray-100 flex flex-col">
+              <div className="h-48 relative">
+                <Image 
+                  src="https://images.unsplash.com/photo-1596742578443-7682ef5251cd?w=500&q=80" 
+                  alt="Smartphone Repair" 
+                  fill 
+                  className="object-cover" 
+                  unoptimized
+                />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Smartphones</h3>
-                <p className="text-gray-600 mb-4">iPhone, Samsung, Google Pixel, and more. Screen replacement, battery swaps, and charging port repairs.</p>
-                <Link href="#" className="text-blue-600 font-semibold hover:text-blue-800">Learn more &rarr;</Link>
+              <div className="p-6 flex-grow">
+                <h3 className="text-xl font-bold text-gray-900 mb-2 flex items-center gap-2">
+                  <PhoneIcon className="text-blue-600" /> Smartphones
+                </h3>
+                <p className="text-gray-600">iPhone, Samsung, Google Pixel, and more. Screen replacement, battery swaps, and charging port repairs.</p>
               </div>
             </div>
 
             {/* Laptops */}
-            <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 border border-gray-100">
-              <div className="h-48 bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center text-white">
-                <LaptopIcon style={{ fontSize: 80 }} />
+            <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 border border-gray-100 flex flex-col">
+              <div className="h-48 relative">
+                <Image 
+                  src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500&q=80" 
+                  alt="Laptop Repair" 
+                  fill 
+                  className="object-cover" 
+                  unoptimized
+                />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Laptops &amp; MacBooks</h3>
-                <p className="text-gray-600 mb-4">Screen repair, keyboard replacement, memory upgrades, data recovery, and virus removal.</p>
-                <Link href="#" className="text-blue-600 font-semibold hover:text-blue-800">Learn more &rarr;</Link>
+              <div className="p-6 flex-grow">
+                <h3 className="text-xl font-bold text-gray-900 mb-2 flex items-center gap-2">
+                  <LaptopIcon className="text-gray-700" /> Laptops &amp; MacBooks
+                </h3>
+                <p className="text-gray-600">Screen repair, keyboard replacement, memory upgrades, data recovery, and virus removal.</p>
               </div>
             </div>
 
             {/* Tablets */}
-            <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 border border-gray-100">
-              <div className="h-48 bg-gradient-to-br from-indigo-500 to-indigo-700 flex items-center justify-center text-white">
-                <TabletIcon style={{ fontSize: 80 }} />
+            <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 border border-gray-100 flex flex-col">
+              <div className="h-48 relative">
+                <Image 
+                  src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=500&q=80" 
+                  alt="Tablet Repair" 
+                  fill 
+                  className="object-cover" 
+                  unoptimized
+                />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">iPads &amp; Tablets</h3>
-                <p className="text-gray-600 mb-4">Cracked screens, battery issues, and software problems for all iPad models and Android tablets.</p>
-                <Link href="#" className="text-blue-600 font-semibold hover:text-blue-800">Learn more &rarr;</Link>
+              <div className="p-6 flex-grow">
+                <h3 className="text-xl font-bold text-gray-900 mb-2 flex items-center gap-2">
+                  <TabletIcon className="text-indigo-600" /> iPads &amp; Tablets
+                </h3>
+                <p className="text-gray-600">Cracked screens, battery issues, and software problems for all iPad models and Android tablets.</p>
               </div>
             </div>
           </div>
@@ -162,17 +184,19 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      <footer id="contact" className="bg-gray-900 text-white py-12 border-t-4 border-blue-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <Image
-              src="/logo.png"
-              alt="KV Mobile Logo"
-              width={150}
-              height={50}
-              className="h-10 w-auto object-contain brightness-0 invert mb-4"
-              unoptimized
-            />
+            <div className="bg-white inline-block p-2 rounded-lg mb-4">
+              <Image
+                src="/logo.png"
+                alt="KV Mobile Logo"
+                width={150}
+                height={50}
+                className="h-10 w-auto object-contain"
+                unoptimized
+              />
+            </div>
             <p className="text-gray-400 mt-2">
               Your trusted partner for all mobile and laptop repairs. Fast, reliable, and professional.
             </p>
@@ -180,19 +204,30 @@ export default function Home() {
           <div>
             <h4 className="text-lg font-semibold mb-4 text-gray-200">Quick Links</h4>
             <ul className="space-y-2 text-gray-400">
-              <li><Link href="/" className="hover:text-white">Home</Link></li>
-              <li><Link href="#services" className="hover:text-white">Services</Link></li>
-              <li><Link href="#" className="hover:text-white">Store Policies</Link></li>
-              <li><Link href="#" className="hover:text-white">Contact Us</Link></li>
+              <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
+              <li><Link href="#services" className="hover:text-white transition-colors">Services</Link></li>
+              <li><Link href="#" className="hover:text-white transition-colors">Store Policies</Link></li>
             </ul>
           </div>
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-gray-200">Contact</h4>
-            <ul className="space-y-2 text-gray-400">
-              <li>?? 123 Tech Street, Downtown</li>
-              <li>?? (123) 456-7890</li>
-              <li>?? info@kvmobile.com</li>
-              <li>?? Mon - Sat: 9 AM - 7 PM</li>
+            <h4 className="text-lg font-semibold mb-4 text-gray-200">Contact Us</h4>
+            <ul className="space-y-3 text-gray-400">
+              <li className="flex items-start">
+                <span className="mr-2">??</span> 
+                <span>Pallegama, Gnathuna, Kegalle</span>
+              </li>
+              <li className="flex items-start">
+                <span className="mr-2">??</span> 
+                <span>0778525115 / 0741718855</span>
+              </li>
+              <li className="flex items-start">
+                <span className="mr-2">??</span> 
+                <a href="mailto:nimeshkavindakarunasinghe@gmail.com" className="hover:text-white break-all">nimeshkavindakarunasinghe@gmail.com</a>
+              </li>
+              <li className="flex items-start">
+                <span className="mr-2">??</span> 
+                <span>Open: 24/7</span>
+              </li>
             </ul>
           </div>
         </div>
@@ -200,6 +235,31 @@ export default function Home() {
           <p>&copy; {new Date().getFullYear()} KV Mobile. All rights reserved.</p>
         </div>
       </footer>
+
+      {/* Floating WhatsApp Button */}
+      <a 
+        href="https://wa.me/94778525115" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 z-50 flex items-center justify-center animate-bounce-slow"
+        aria-label="Chat on WhatsApp"
+      >
+        <WhatsAppIcon style={{ fontSize: 32 }} />
+      </a>
+      
+      <style dangerouslySetInnerHTML={{__html: `
+        .animate-bounce-slow {
+          animation: bounce-slow 3s infinite;
+        }
+        @keyframes bounce-slow {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+        }
+      `}} />
     </div>
   );
 }
