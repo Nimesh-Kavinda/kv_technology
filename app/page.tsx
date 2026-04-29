@@ -44,7 +44,7 @@ export default function Home() {
             <div className="hidden md:flex items-center">
               <a href="tel:0778525115" className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                 <PhoneIcon className="mr-2 -ml-1 h-5 w-5" />
-                0778525115
+                Call Now
               </a>
             </div>
           </div>
