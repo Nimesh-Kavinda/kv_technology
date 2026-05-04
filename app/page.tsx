@@ -123,11 +123,30 @@ const DividerFade = () => (
   </div>
 );
 
+const FloatingTool = () => (
+  <div className="fixed top-1/4 sm:top-1/3 right-2 sm:right-8 z-30 pointer-events-none">
+    <motion.div
+      initial={{ x: 200, opacity: 0, rotate: 90 }}
+      animate={{ x: 0, opacity: 0.9, rotate: 0 }}
+      transition={{ type: "spring", stiffness: 50, damping: 12, delay: 0.5 }}
+      className="relative w-24 h-24 sm:w-40 sm:h-40 drop-shadow-2xl"
+    >
+      <motion.div
+        animate={{ y: [0, -30, 0], rotate: [0, 15, -10, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        className="w-full h-full"
+      >
+        <Image src="/animate.png" alt="Animated Tool" fill className="object-contain" unoptimized />
+      </motion.div>
+    </motion.div>
+  </div>
+);
+
 export default function Home() {
   const [mobileMenuOpen,
   setMobileMenuOpen]=useState(false);
 
-  return (<div className="min-h-screen bg-gray-50 flex flex-col font-sans relative overflow-x-hidden"> {
+  return (<div className="min-h-screen bg-gray-50 flex flex-col font-sans relative overflow-x-clip"> {
       /* Header */
     }
 
@@ -305,7 +324,7 @@ export default function Home() {
         > <PhoneIcon className="mr-2 -ml-1 h-5 w-5"/> Call Now </a> </div> </motion.div>)
     }
 
-    </header> <main className="flex-grow"> {
+    </header> <main className="flex-grow relative"> <FloatingTool /> {
       /* Hero Section */
     }
 
@@ -565,7 +584,7 @@ export default function Home() {
       /* Footer */
     }
 
-    <footer id="contact"className="bg-gray-900 text-white py-12 border-t-4 border-blue-600"> <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8"> <motion.div initial="hidden"
+    <footer id="contact"className="bg-gray-900 text-white py-12 border-t-4 border-blue-600 relative z-40"> <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8"> <motion.div initial="hidden"
     whileInView="visible"
 
     viewport= {
