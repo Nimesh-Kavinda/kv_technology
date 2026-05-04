@@ -26,6 +26,8 @@ import {
   Close as CloseIcon,
   LocationOn as LocationOnIcon,
   Email as EmailIcon,
+  Star as StarIcon,
+  ExpandMore as ExpandMoreIcon,
 }
 
 from "@mui/icons-material";
@@ -150,9 +152,9 @@ export default function Home() {
       }
     }
 
-    className="hidden md:ml-6 md:flex md:space-x-8"
+    className="hidden md:ml-6 md:flex md:space-x-6"
 
-    > <Link href="#"className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 border-b-2 px-1 pt-1 text-sm font-medium transition-colors">Home</Link> <Link href="#services"className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 border-b-2 px-1 pt-1 text-sm font-medium transition-colors">Repair Services</Link> <Link href="#accessories"className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 border-b-2 px-1 pt-1 text-sm font-medium transition-colors">Accessories</Link> <Link href="#contact"className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 border-b-2 px-1 pt-1 text-sm font-medium transition-colors">Contact Us</Link> </motion.nav> <motion.div initial= {
+    > <Link href="#"className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 border-b-2 px-1 pt-1 text-sm font-medium transition-colors">Home</Link> <Link href="#services"className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 border-b-2 px-1 pt-1 text-sm font-medium transition-colors">Services</Link> <Link href="#why-choose-us"className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 border-b-2 px-1 pt-1 text-sm font-medium transition-colors">Why Us</Link> <Link href="#accessories"className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 border-b-2 px-1 pt-1 text-sm font-medium transition-colors">Accessories</Link> <Link href="#testimonials"className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 border-b-2 px-1 pt-1 text-sm font-medium transition-colors">Reviews</Link> <Link href="#faq"className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 border-b-2 px-1 pt-1 text-sm font-medium transition-colors">FAQ</Link> <Link href="#contact"className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 border-b-2 px-1 pt-1 text-sm font-medium transition-colors">Contact</Link> </motion.nav> <motion.div initial= {
         {
         opacity: 0, x: 20
       }
@@ -226,14 +228,35 @@ export default function Home() {
           ()=> setMobileMenuOpen(false)
         }
 
-        > Repair Services </Link> <Link href="#accessories"
+        > Repair Services </Link> <Link href="#why-choose-us"
         className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
 
         onClick= {
           ()=> setMobileMenuOpen(false)
         }
 
-        > Accessories </Link> <Link href="#contact"
+        > Why Choose Us </Link> <Link href="#accessories"
+        className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+
+        onClick= {
+          ()=> setMobileMenuOpen(false)
+        }
+
+        > Accessories </Link> <Link href="#testimonials"
+        className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+
+        onClick= {
+          ()=> setMobileMenuOpen(false)
+        }
+
+        > Testimonials </Link> <Link href="#faq"
+        className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+
+        onClick= {
+          ()=> setMobileMenuOpen(false)
+        }
+
+        > FAQ </Link> <Link href="#contact"
         className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
 
         onClick= {
@@ -280,7 +303,7 @@ export default function Home() {
 
     > <motion.h1 variants= {
       fadeInUp
-    }
+    }id="why-choose-us" 
 
     className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl max-w-2xl"
 
@@ -478,7 +501,15 @@ export default function Home() {
     alt="Phone Back Covers"
     fill className="object-cover group-hover:scale-110 transition-transform duration-700"
 
-    unoptimized /> </div> <div className="p-5"> <h3 className="text-lg font-bold text-gray-900 mb-1">Back Covers</h3> <p className="text-sm text-gray-600">Stylish, rugged, and clear cases for maximum drop &amp; scratch protection.</p> </div> </motion.div> </motion.div> </div> </div> </main> {
+    unoptimized /> </div> <div className="p-5"> <h3 className="text-lg font-bold text-gray-900 mb-1">Back Covers</h3> <p className="text-sm text-gray-600">Stylish, rugged, and clear cases for maximum drop &amp; scratch protection.</p> </div> </motion.div> </motion.div> </div> </div> {
+      /* Testimonials Section */
+    }
+
+    <div id="testimonials" className="bg-white py-16 px-4 sm:py-24 sm:px-6 lg:px-8 border-t border-gray-200"> <div className="max-w-7xl mx-auto"> <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeInUp} className="text-center"> <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">What Our Customers Say</h2> <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500"> Real reviews from our satisfied clients. </p> </motion.div> <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={staggerContainer} className="mt-12 grid gap-8 grid-cols-1 md:grid-cols-3"> {[1, 2, 3].map((item) => ( <motion.div key={item} variants={fadeInUp} className="bg-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm relative hover:shadow-md transition-shadow duration-300"> <div className="flex items-center space-x-1 text-yellow-400 mb-4"> {[...Array(5)].map((_, i) => (<StarIcon key={i} fontSize="small" />))} </div> <p className="text-gray-600 italic mb-6 leading-relaxed"> {item === 1 && `"Absolutely amazing service. Fixed my shattered iPhone screen in under 30 minutes. Highly recommended!"`} {item === 2 && `"My laptop was running super slow, but the team here upgraded memory and it runs like new. Great pricing too."`} {item === 3 && `"Very honest and professional. They diagnosed my iPad battery issue quickly and had the parts in stock."`}</p> <div className="font-semibold text-gray-900 text-lg"> {item === 1 && "Kasun Silva"} {item === 2 && "Mohamed M."} {item === 3 && "Nuwan Perera"} </div> <div className="text-sm text-gray-500 mt-1">Verified Customer</div> </motion.div> ))} </motion.div> </div> </div> {
+      /* FAQ Section */
+    }
+
+    <div id="faq" className="bg-gray-50 py-16 px-4 sm:py-24 sm:px-6 lg:px-8"> <div className="max-w-4xl mx-auto"> <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeInUp} className="text-center mb-12"> <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Frequently Asked Questions</h2> <p className="mt-4 text-xl text-gray-500">Everything you need to know about our services.</p> </motion.div> <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={staggerContainer} className="space-y-4"> {[{q: "How long does a screen repair take?", a: "Most mobile phone screen replacements take about 30 to 60 minutes. We carry parts for most popular models in stock so you can wait while we fix it."}, {q: "Do you offer a warranty on your repairs?", a: "Yes! We stand behind our work with a 90-day warranty on all parts and labor to give you peace of mind."}, {q: "Will I lose my data during the repair?", a: "For most hardware repairs like screen and battery replacements, your data is completely safe. However, we always recommend backing up your device before handing it over just to be absolutely secure."}, {q: "Do I need an appointment?", a: "Walk-ins are always welcome, but contacting us ahead of time helps ensure we have your specific parts in stock and can repair your device as soon as you arrive."}].map((faq, index) => ( <motion.details key={index} variants={fadeInUp} className="group bg-white p-6 rounded-xl shadow-sm border border-gray-200 cursor-pointer outline-none"> <summary className="flex justify-between items-center font-medium list-none text-lg text-gray-900 focus:outline-none"> <span>{faq.q}</span> <span className="transition-transform duration-300 group-open:rotate-180 text-gray-500"> <ExpandMoreIcon /> </span> </summary> <p className="text-gray-600 mt-4 leading-relaxed animate-fadeIn">{faq.a}</p> </motion.details> ))} </motion.div> </div> </div> </main> {
       /* Footer */
     }
 
@@ -585,6 +616,15 @@ export default function Home() {
           50% {
             transform: translateY(-10px);
           }
+        }
+        
+        .animate-fadeIn {
+          animation: fadeIn 0.4s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(-5px); }
+          to { opacity: 1; transform: translateY(0); }
         }
 
         `
