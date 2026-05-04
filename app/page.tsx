@@ -86,6 +86,43 @@ const scaleIn= {
 
 ;
 
+const DividerSlide = () => (
+  <div className="w-full overflow-hidden flex justify-center py-10 relative z-20">
+    <motion.div initial={{ opacity: 0, scaleX: 0 }} whileInView={{ opacity: 1, scaleX: 1 }} viewport={{ once: false, margin: "-50px" }} transition={{ duration: 0.8, ease: "easeOut" }} className="h-1 w-full max-w-4xl bg-gradient-to-r from-transparent via-blue-400 to-transparent relative">
+      <motion.div initial={{ left: "0%", opacity: 0 }} whileInView={{ left: "100%", opacity: 0 }} animate={{ left: ["0%", "50%", "100%"], opacity: [0, 1, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full shadow-[0_0_12px_rgba(37,99,235,1)]" />
+    </motion.div>
+  </div>
+);
+
+const DividerSplit = () => (
+  <div className="w-full overflow-hidden flex justify-center items-center py-10 relative z-20">
+    <motion.div initial={{ opacity: 0, width: 0 }} whileInView={{ opacity: 1, width: "100%" }} viewport={{ once: false, margin: "-50px" }} transition={{ duration: 1, ease: "easeInOut" }} className="h-1 max-w-4xl bg-gradient-to-r from-transparent via-indigo-400 to-transparent relative flex justify-between items-center">
+        <motion.div initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: false }} transition={{ delay: 0.5, duration: 0.5 }} className="w-4 h-4 rounded-full bg-indigo-600 shadow-[0_0_10px_rgba(79,70,229,1)]" />
+        <motion.div initial={{ scale: 0 }} whileInView={{ scale: 1 }} transition={{ delay: 0.5, duration: 0.5 }} className="w-4 h-4 rounded-full bg-indigo-600 shadow-[0_0_10px_rgba(79,70,229,1)]" />
+    </motion.div>
+  </div>
+);
+
+const DividerBounce = () => (
+  <div className="w-full flex justify-center items-center py-10 gap-3 relative z-20">
+    <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: false, margin: "-50px" }} transition={{ duration: 0.6 }} className="h-1 flex-1 max-w-xs bg-gradient-to-r from-transparent to-blue-500 rounded-r-full" />
+    {[0, 1, 2].map((i) => (
+      <motion.div key={i} initial={{ scale: 0 }} whileInView={{ scale: [0, 1.5, 1] }} viewport={{ once: false, margin: "-50px" }} transition={{ delay: i * 0.15, duration: 0.5 }} className="w-3 h-3 bg-blue-600 rounded-full shadow-[0_0_8px_rgba(37,99,235,0.8)]" />
+    ))}
+    <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: false, margin: "-50px" }} transition={{ duration: 0.6 }} className="h-1 flex-1 max-w-xs bg-gradient-to-l from-transparent to-blue-500 rounded-l-full" />
+  </div>
+);
+
+const DividerFade = () => (
+  <div className="w-full flex justify-center py-10 relative z-20">
+    <motion.div initial={{ opacity: 0, scaleY: 0 }} whileInView={{ opacity: 1, scaleY: 1 }} viewport={{ once: false, margin: "-50px" }} transition={{ duration: 0.5 }} className="w-full max-w-3xl flex flex-col items-center gap-1">
+       <motion.div initial={{ width: "20%" }} whileInView={{ width: "100%" }} transition={{ duration: 1, ease: "easeOut" }} className="h-1 bg-gradient-to-r from-transparent via-blue-600 to-transparent" />
+       <motion.div initial={{ width: "10%" }} whileInView={{ width: "70%" }} transition={{ duration: 1, ease: "easeOut", delay: 0.2 }} className="h-0.5 bg-gradient-to-r from-transparent via-blue-400 to-transparent" />
+       <motion.div initial={{ width: "5%" }} whileInView={{ width: "40%" }} transition={{ duration: 1, ease: "easeOut", delay: 0.4 }} className="h-0.5 bg-gradient-to-r from-transparent via-blue-300 to-transparent opacity-50" />
+    </motion.div>
+  </div>
+);
+
 export default function Home() {
   const [mobileMenuOpen,
   setMobileMenuOpen]=useState(false);
@@ -351,7 +388,7 @@ export default function Home() {
       fadeInUp
     }
 
-    className="flex flex-col items-center p-4"> <div className="flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 text-blue-600 mb-4 transition-transform hover:scale-110"> <CheckCircleIcon fontSize="large"/> </div> <h3 className="text-lg font-medium text-gray-900">Warranty Included</h3> <p className="mt-2 text-sm text-gray-500">We stand by our work with a 90-day warranty on all parts and labor.</p> </motion.div> </motion.div> </div> </div> {
+    className="flex flex-col items-center p-4"> <div className="flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 text-blue-600 mb-4 transition-transform hover:scale-110"> <CheckCircleIcon fontSize="large"/> </div> <h3 className="text-lg font-medium text-gray-900">Warranty Included</h3> <p className="mt-2 text-sm text-gray-500">We stand by our work with a 90-day warranty on all parts and labor.</p> </motion.div> </motion.div> </div> </div> <DividerSlide /> {
       /* Main Services Section */
     }
 
@@ -420,7 +457,7 @@ export default function Home() {
     alt="Tablet Repair"
     fill className="object-cover transition-transform duration-700 group-hover:scale-110"
 
-    unoptimized /> </div> <div className="p-6 flex-grow"> <h3 className="text-xl font-bold text-gray-900 mb-2 flex items-center gap-2"> <TabletIcon className="text-indigo-600"/> iPads &amp; Tablets </h3> <p className="text-gray-600">Cracked screens, battery issues, and software problems for all iPad models and Android tablets.</p> </div> </motion.div> </motion.div> </div> {
+    unoptimized /> </div> <div className="p-6 flex-grow"> <h3 className="text-xl font-bold text-gray-900 mb-2 flex items-center gap-2"> <TabletIcon className="text-indigo-600"/> iPads &amp; Tablets </h3> <p className="text-gray-600">Cracked screens, battery issues, and software problems for all iPad models and Android tablets.</p> </div> </motion.div> </motion.div> </div> <DividerSplit /> {
       /* Accessories Section */
     }
 
@@ -501,11 +538,11 @@ export default function Home() {
     alt="Phone Back Covers"
     fill className="object-cover group-hover:scale-110 transition-transform duration-700"
 
-    unoptimized /> </div> <div className="p-5"> <h3 className="text-lg font-bold text-gray-900 mb-1">Back Covers</h3> <p className="text-sm text-gray-600">Stylish, rugged, and clear cases for maximum drop &amp; scratch protection.</p> </div> </motion.div> </motion.div> </div> </div> {
+    unoptimized /> </div> <div className="p-5"> <h3 className="text-lg font-bold text-gray-900 mb-1">Back Covers</h3> <p className="text-sm text-gray-600">Stylish, rugged, and clear cases for maximum drop &amp; scratch protection.</p> </div> </motion.div> </motion.div> </div> </div> <DividerBounce /> {
       /* Testimonials Section */
     }
 
-    <div id="testimonials" className="bg-white py-16 px-4 sm:py-24 sm:px-6 lg:px-8 border-t border-gray-200"> <div className="max-w-7xl mx-auto"> <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeInUp} className="text-center"> <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">What Our Customers Say</h2> <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500"> Real reviews from our satisfied clients. </p> </motion.div> <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={staggerContainer} className="mt-12 grid gap-8 grid-cols-1 md:grid-cols-3"> {[1, 2, 3].map((item) => ( <motion.div key={item} variants={fadeInUp} className="bg-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm relative hover:shadow-md transition-shadow duration-300"> <div className="flex items-center space-x-1 text-yellow-400 mb-4"> {[...Array(5)].map((_, i) => (<StarIcon key={i} fontSize="small" />))} </div> <p className="text-gray-600 italic mb-6 leading-relaxed"> {item === 1 && `"Absolutely amazing service. Fixed my shattered iPhone screen in under 30 minutes. Highly recommended!"`} {item === 2 && `"My laptop was running super slow, but the team here upgraded memory and it runs like new. Great pricing too."`} {item === 3 && `"Very honest and professional. They diagnosed my iPad battery issue quickly and had the parts in stock."`}</p> <div className="font-semibold text-gray-900 text-lg"> {item === 1 && "Kasun Silva"} {item === 2 && "Mohamed M."} {item === 3 && "Nuwan Perera"} </div> <div className="text-sm text-gray-500 mt-1">Verified Customer</div> </motion.div> ))} </motion.div> </div> </div> {
+    <div id="testimonials" className="bg-white py-16 px-4 sm:py-24 sm:px-6 lg:px-8 border-t border-gray-200"> <div className="max-w-7xl mx-auto"> <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeInUp} className="text-center"> <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">What Our Customers Say</h2> <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500"> Real reviews from our satisfied clients. </p> </motion.div> <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={staggerContainer} className="mt-12 grid gap-8 grid-cols-1 md:grid-cols-3"> {[1, 2, 3].map((item) => ( <motion.div key={item} variants={fadeInUp} className="bg-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm relative hover:shadow-md transition-shadow duration-300"> <div className="flex items-center space-x-1 text-yellow-400 mb-4"> {[...Array(5)].map((_, i) => (<StarIcon key={i} fontSize="small" />))} </div> <p className="text-gray-600 italic mb-6 leading-relaxed"> {item === 1 && `"Absolutely amazing service. Fixed my shattered iPhone screen in under 30 minutes. Highly recommended!"`} {item === 2 && `"My laptop was running super slow, but the team here upgraded memory and it runs like new. Great pricing too."`} {item === 3 && `"Very honest and professional. They diagnosed my iPad battery issue quickly and had the parts in stock."`}</p> <div className="font-semibold text-gray-900 text-lg"> {item === 1 && "Kasun Silva"} {item === 2 && "Mohamed M."} {item === 3 && "Nuwan Perera"} </div> <div className="text-sm text-gray-500 mt-1">Verified Customer</div> </motion.div> ))} </motion.div> </div> </div> <DividerFade /> {
       /* FAQ Section */
     }
 
