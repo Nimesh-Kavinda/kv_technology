@@ -317,20 +317,21 @@ export default function Home() {
 
     animate= {
         {
-        scale: 1
+        scale: [1.1, 1.02, 1.1],
+        opacity: [1, 0.85, 1]
       }
     }
 
     transition= {
         {
-        duration: 1.5, ease: "easeOut"
+        duration: 12, ease: "easeInOut", repeat: Infinity
       }
     }
 
     className="w-full h-full relative"
     > <Image src="/cover.png"
     alt="Store Cover"
-    fill className="w-full h-full object-cover opacity-40"
+    fill className="w-full h-full object-cover opacity-50"
     priority unoptimized /> </motion.div> <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/70 to-transparent"></div> </div> <div className="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8"> <motion.div initial="hidden"
     animate="visible"
 
