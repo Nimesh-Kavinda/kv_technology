@@ -341,7 +341,7 @@ export default function Home() {
 
     > <motion.h1 variants= {
       fadeInUp
-    }id="why-choose-us" 
+    }
 
     className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl max-w-2xl"
 
@@ -362,34 +362,48 @@ export default function Home() {
       /* Features / Why Choose Us */
     }
 
-    <div className="bg-white py-12 border-b border-gray-100 relative z-10"> <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> <motion.div initial="hidden"
-    whileInView="visible"
+    <div id="why-choose-us" className="bg-gray-50/50 py-20 px-4 sm:px-6 lg:px-8 relative z-10 overflow-hidden">
+      {/* Decorative background blur */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-lg h-60 bg-blue-400/10 blur-[100px] rounded-full pointer-events-none" />
 
-    viewport= {
-        {
-        once: true, margin: "-50px"
-      }
-    }
+      <div className="max-w-7xl mx-auto relative">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeInUp} className="text-center mb-16">
+          <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Why Choose Us?</h2>
+          <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">We deliver top-tier service, unmatched speed, and peace of mind.</p>
+        </motion.div>
 
-    variants= {
-      staggerContainer
-    }
-
-    className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center"
-
-    > <motion.div variants= {
-      fadeInUp
-    }
-
-    className="flex flex-col items-center p-4"> <div className="flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 text-blue-600 mb-4 transition-transform hover:scale-110"> <AccessTimeIcon fontSize="large"/> </div> <h3 className="text-lg font-medium text-gray-900">Fast Turnaround</h3> <p className="mt-2 text-sm text-gray-500">Most repairs are completed within 1-2 hours while you wait.</p> </motion.div> <motion.div variants= {
-      fadeInUp
-    }
-
-    className="flex flex-col items-center p-4"> <div className="flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 text-blue-600 mb-4 transition-transform hover:scale-110"> <BuildIcon fontSize="large"/> </div> <h3 className="text-lg font-medium text-gray-900">Expert Technicians</h3> <p className="mt-2 text-sm text-gray-500">Our staff is highly trained and experienced in repairing all major brands.</p> </motion.div> <motion.div variants= {
-      fadeInUp
-    }
-
-    className="flex flex-col items-center p-4"> <div className="flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 text-blue-600 mb-4 transition-transform hover:scale-110"> <CheckCircleIcon fontSize="large"/> </div> <h3 className="text-lg font-medium text-gray-900">Warranty Included</h3> <p className="mt-2 text-sm text-gray-500">We stand by our work with a 90-day warranty on all parts and labor.</p> </motion.div> </motion.div> </div> </div> <DividerSlide /> {
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={staggerContainer} className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 relative z-10">
+          
+          <motion.div variants={fadeInUp} className="group flex flex-col items-center text-center p-8 bg-white rounded-3xl shadow-sm border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-blue-600 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
+            <div className="flex items-center justify-center h-20 w-20 rounded-2xl bg-blue-50 text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-inner group-hover:rotate-6"> 
+              <AccessTimeIcon fontSize="large" /> 
+            </div> 
+            <h3 className="text-xl font-bold text-gray-900 mb-3">Fast Turnaround</h3> 
+            <p className="text-base text-gray-600 leading-relaxed">Most repairs are completed within 1-2 hours while you wait. We respect your time.</p> 
+          </motion.div> 
+          
+          <motion.div variants={fadeInUp} className="group flex flex-col items-center text-center p-8 bg-white rounded-3xl shadow-sm border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-400 to-indigo-600 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
+            <div className="flex items-center justify-center h-20 w-20 rounded-2xl bg-indigo-50 text-indigo-600 mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300 shadow-inner group-hover:-rotate-6"> 
+              <BuildIcon fontSize="large" /> 
+            </div> 
+            <h3 className="text-xl font-bold text-gray-900 mb-3">Expert Technicians</h3> 
+            <p className="text-base text-gray-600 leading-relaxed">Our staff is highly trained, certified, and experienced in repairing all major brands and complex issues.</p> 
+          </motion.div> 
+          
+          <motion.div variants={fadeInUp} className="group flex flex-col items-center text-center p-8 bg-white rounded-3xl shadow-sm border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-400 to-emerald-600 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
+            <div className="flex items-center justify-center h-20 w-20 rounded-2xl bg-emerald-50 text-emerald-600 mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300 shadow-inner group-hover:scale-110"> 
+              <CheckCircleIcon fontSize="large" /> 
+            </div> 
+            <h3 className="text-xl font-bold text-gray-900 mb-3">Warranty Included</h3> 
+            <p className="text-base text-gray-600 leading-relaxed">We stand by our work with an ironclad 90-day warranty on all premium replacement parts and labor.</p> 
+          </motion.div> 
+          
+        </motion.div> 
+      </div> 
+    </div> <DividerSlide /> {
       /* Main Services Section */
     }
 
