@@ -127,7 +127,7 @@ export default function Home() {
   const [mobileMenuOpen,
   setMobileMenuOpen]=useState(false);
 
-  return (<div className="min-h-screen bg-gray-50 flex flex-col font-sans relative"> {
+  return (<div className="min-h-screen bg-gray-50 flex flex-col font-sans relative overflow-x-hidden"> {
       /* Header */
     }
 
@@ -606,40 +606,27 @@ export default function Home() {
     }
 
     KV Technology. All rights reserved.</p> </div> </footer> {
-      /* Floating WhatsApp Button */
+      /* Floating Contact Buttons */
     }
 
-    <motion.a initial= {
-        {
-        opacity: 0, scale: 0
-      }
-    }
+    <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
+      <motion.a initial={{ opacity: 0, scale: 0, y: 50 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ delay: 1.4, duration: 0.5 }} href="mailto:nimeshkavindakarunasinghe@gmail.com" className="bg-red-500 hover:bg-red-600 text-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 flex items-center justify-center relative group" aria-label="Send Email">
+        <EmailIcon style={{ fontSize: 24 }} />
+        <span className="absolute right-full mr-4 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Email Us</span>
+      </motion.a>
 
-    animate= {
-        {
-        opacity: 1, scale: 1
-      }
-    }
+      <motion.a initial={{ opacity: 0, scale: 0, y: 50 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ delay: 1.2, duration: 0.5 }} href="tel:0778525115" className="bg-blue-500 hover:bg-blue-600 text-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 flex items-center justify-center relative group" aria-label="Call Now">
+        <PhoneIcon style={{ fontSize: 24 }} />
+        <span className="absolute right-full mr-4 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Call Now</span>
+      </motion.a>
 
-    transition= {
-        {
-        delay: 1, duration: 0.5
-      }
-    }
+      <motion.a initial={{ opacity: 0, scale: 0, y: 50 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ delay: 1.0, duration: 0.5 }} href="https://wa.me/94778525115" target="_blank" rel="noopener noreferrer" className="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 flex items-center justify-center animate-bounce-slow relative group" aria-label="Chat on WhatsApp">
+        <WhatsAppIcon style={{ fontSize: 32 }} />
+        <span className="absolute right-full mr-4 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">WhatsApp</span>
+      </motion.a>
+    </div>
 
-    href="https://wa.me/94778525115"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 z-50 flex items-center justify-center animate-bounce-slow"
-    aria-label="Chat on WhatsApp"
-
-    > <WhatsAppIcon style= {
-        {
-        fontSize: 32
-      }
-    }
-
-    /> </motion.a> <style dangerouslySetInnerHTML= {
+    <style dangerouslySetInnerHTML= {
         {
         __html: ` .animate-bounce-slow {
           animation: bounce-slow 3s infinite;
