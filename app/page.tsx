@@ -191,7 +191,7 @@ export default function Home() {
 
     className="hidden md:ml-6 md:flex md:space-x-6"
 
-    > <Link href="#"className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 border-b-2 px-1 pt-1 text-sm font-medium transition-colors">Home</Link> <Link href="#services"className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 border-b-2 px-1 pt-1 text-sm font-medium transition-colors">Services</Link> <Link href="#why-choose-us"className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 border-b-2 px-1 pt-1 text-sm font-medium transition-colors">Why Us</Link> <Link href="#accessories"className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 border-b-2 px-1 pt-1 text-sm font-medium transition-colors">Accessories</Link> <Link href="#testimonials"className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 border-b-2 px-1 pt-1 text-sm font-medium transition-colors">Reviews</Link> <Link href="#faq"className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 border-b-2 px-1 pt-1 text-sm font-medium transition-colors">FAQ</Link> <Link href="#contact"className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 border-b-2 px-1 pt-1 text-sm font-medium transition-colors">Contact</Link> </motion.nav> <motion.div initial= {
+    > <Link href="#"className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 border-b-2 px-1 pt-1 text-sm font-medium transition-colors">Home</Link> <Link href="#why-choose-us"className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 border-b-2 px-1 pt-1 text-sm font-medium transition-colors">Why Us</Link> <Link href="#services"className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 border-b-2 px-1 pt-1 text-sm font-medium transition-colors">Services</Link> <Link href="#accessories"className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 border-b-2 px-1 pt-1 text-sm font-medium transition-colors">Accessories</Link> <Link href="#testimonials"className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 border-b-2 px-1 pt-1 text-sm font-medium transition-colors">Reviews</Link> <Link href="#faq"className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 border-b-2 px-1 pt-1 text-sm font-medium transition-colors">FAQ</Link> <Link href="#contact"className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 border-b-2 px-1 pt-1 text-sm font-medium transition-colors">Contact</Link> </motion.nav> <motion.div initial= {
         {
         opacity: 0, x: 20
       }
@@ -258,21 +258,21 @@ export default function Home() {
           ()=> setMobileMenuOpen(false)
         }
 
-        > Home </Link> <Link href="#services"
+        > Home </Link> <Link href="#why-choose-us"
         className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
 
         onClick= {
           ()=> setMobileMenuOpen(false)
         }
 
-        > Repair Services </Link> <Link href="#why-choose-us"
+        > Why Choose Us </Link> <Link href="#services"
         className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
 
         onClick= {
           ()=> setMobileMenuOpen(false)
         }
 
-        > Why Choose Us </Link> <Link href="#accessories"
+        > Repair Services </Link> <Link href="#accessories"
         className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
 
         onClick= {
