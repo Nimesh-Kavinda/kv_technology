@@ -91,6 +91,7 @@ const DividerSlide = () => (
     <motion.div initial={{ opacity: 0, scaleX: 0 }} whileInView={{ opacity: 1, scaleX: 1 }} viewport={{ once: false, margin: "-50px" }} transition={{ duration: 0.8, ease: "easeOut" }} className="h-1 w-full max-w-4xl bg-gradient-to-r from-transparent via-blue-400 to-transparent relative">
       <motion.div initial={{ left: "0%", opacity: 0 }} whileInView={{ left: "100%", opacity: 0 }} animate={{ left: ["0%", "50%", "100%"], opacity: [0, 1, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full shadow-[0_0_12px_rgba(37,99,235,1)]" />
     </motion.div>
+
   </div>
 );
 
